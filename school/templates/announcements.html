@@ -30,7 +30,6 @@
                 <a href="{% url 'courses' %}">Manage Course</a>
                 <a href="{% url 'add_trainer' %}">Add Trainer</a>
                 <a href="{% url 'trainers' %}">Manage Trainers</a>
-                {#{#                <a href="{% url 'add_item'%}">Add Product</a>#}
                  <a href="{% url 'add_announcement' %}">Add Announcement</a>
                 <a href="{% url 'announcements' %}">Manage Announcement</a>
 
@@ -55,9 +54,6 @@
                                 <th>Title</th>
                                 <th>Message</th>
                                 <th>Date Posted</th>
-{#                                <th>Quantity</th>#}
-{#                                <th>Price</th>#}
-{#                                <th>Description</th>#}
                                 <th>Actions</th>
                             </tr>
                         </thead>
@@ -68,9 +64,6 @@
                             <td>{{ announcement.title }}</td>
                             <td>{{ announcement.message }}</td>
                             <td>{{ announcement.date_posted }}</td>
-{#                            <td>{{ product.quantity }}</td>#}
-{#                            <td>{{ product.price }}</td>#}
-{#                            <td>{{ product.description }}</td>#}
                             <td>
                                 <a href="#" class="btn btn btn-sm btn-primary">Edit</a>
 

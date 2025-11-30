@@ -27,7 +27,6 @@
                 <a href="{% url 'courses'%}">Manage Course</a>
                 <a href="{% url 'add_trainer'%}">Add Trainer</a>
                 <a href="{% url 'trainers'%}">Manage Trainers</a>
-{#                <a href="{% url 'add_item'%}">Add Product</a>#}
                  <a href="{% url 'add_announcement'%}">Add Announcement</a>
                 <a href="{% url 'announcements'%}">Manage Announcement</a>
             </div>
@@ -49,9 +48,6 @@
                                 <th>Name</th>
                                 <th>Bio</th>
                                 <th>Experience</th>
-{#                                <th>Quantity</th>#}
-{#                                <th>Price</th>#}
-{#                                <th>Description</th>#}
                                 <th>Actions</th>
                             </tr>
                         </thead>
@@ -62,9 +58,6 @@
                             <td>{{ trainer.name }}</td>
                             <td>{{ trainer.bio }}</td>
                             <td>{{ trainer.experience }}</td>
-{#                            <td>{{ product.quantity }}</td>#}
-{#                            <td>{{ product.price }}</td>#}
-{#                            <td>{{ product.description }}</td>#}
                             <td>
                                 <a href="#" class="btn btn btn-sm btn-primary">Edit</a>
 
