@@ -1,0 +1,93 @@
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Admin Dashboard</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <link rel="stylesheet" href="{% static 'css/main.css' %}">
+</head>
+<body>
+
+
+<nav class="navbar navbar-dark bg-dark sticky-top">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="#">Dashboard</a>
+        <button class="navbar-toggler d-md-none collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#sidebarMenu">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+    </div>
+</nav>
+
+<div class="container-fluid">
+    <div class="row">
+        <!-- Sidebar -->
+        <nav id="sidebarMenu" class="col-md-3 col-lg-2 d-md-block bg-dark sidebar collapse">
+            <div class="position-sticky">
+
+                <a href="{% url 'add_course'%}">Add Course</a>
+                <a href="{% url 'courses'%}">Manage Course</a>
+                <a href="{% url 'add_trainer'%}">Add Trainer</a>
+                <a href="{% url 'trainers'%}">Manage Trainers</a>
+{#                <a href="{% url 'add_item'%}">Add Product</a>#}
+                <a href="{% url 'add_announcement'%}">Add Announcement</a>
+                <a href="{% url 'announcements'%}">Manage Announcement</a>
+            </div>
+        </nav>
+
+
+        <main class="col-md-9 ms-sm-auto col-lg-10 content">
+            <h2>eMobilis Training Institute</h2>
+            <p>Below are our Courses</p>
+
+            <div class="card mt-4">
+                <div class="card-header">
+                    Courses List
+                    <a href="{% url 'add_course'%}" class="btn btn-success btn-sm float-end">+ Add a New Course</a>
+                </div>
+                <div class="card-body">
+                    <table class="table table-hover">
+                        <thead class="table-dark">
+                            <tr>
+                                <th>#</th>
+                                <th>Title</th>
+                                <th>Description</th>
+                                <th>Duration</th>
+{#                                <th>Quantity</th>#}
+{#                                <th>Price</th>#}
+{#                                <th>Description</th>#}
+                                <th>Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                         {% for course in courses %}
+                        <tr>
+                            <td>{{ forloop.counter }}</td>
+                            <td>{{ course.title }}</td>
+                            <td>{{ course.description }}</td>
+                            <td>{{ course.duration }}</td>
+{#                            <td>{{ product.quantity }}</td>#}
+{#                            <td>{{ product.price }}</td>#}
+{#                            <td>{{ product.description }}</td>#}
+                            <td>
+                                <a href="#" class="btn btn btn-sm btn-primary">Edit</a>
+
+                                 <a href="{% url 'delete_course' course.id %}" class="btn btn btn-sm btn-danger" onclick="return confirm('Why Would You Do that!!😒')">Delete</a>
+                            </td>
+                        </tr>
+                        {% endfor %}
+
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+        </main>
+    </div>
+</div>
+
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
